@@ -3,8 +3,9 @@
 int main(int ac, char **av)
 {
     t_list  *a;
-    t_list  *b;
+    //t_list  *b;
 
+    a = NULL;
     if (ac != 2)
         return (0);
     parsing(&a, av[1]);
