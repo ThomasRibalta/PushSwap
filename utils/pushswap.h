@@ -3,6 +3,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -16,8 +17,13 @@ typedef struct s_list
 char	**ft_split(char *s, char c);
 int ft_atoi(const char *str);
 t_list	*ft_lstnew(int nb);
+int	ft_lstsize(t_list *lst);
+void    is_sort(t_list *a);
 void    parsing(t_list **a, char *num);
-void NewFunction(t_list ** a);
+void    small_sort(t_list *a, t_list *b);
+void    rra(t_list *a);
+void    sa(t_list *a);
+void    sb(t_list *b);
 void aff_list(t_list **lst);
 void ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
