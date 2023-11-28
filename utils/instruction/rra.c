@@ -2,18 +2,18 @@
 
 void    rra(t_list *a)
 {
-    int tmp;
-    int i;
+	int tmp;
+	int tmp2;
 
-    i = 0;
-    tmp = ft_lstlast(a)->num;
+    tmp2 = a->num;
     while (a && a->next)
 	{
-        a->next->num = a->num;
-        if (i == 0)
-            a->num = tmp;
-	    a = a->next;
-        i++;
+        tmp = tmp2;
+        if (!a->prev)
+            a->num = ft_lstlast(a)->num; 
+        tmp2 = a->next->num;
+        a->next->num = tmp;
+        a = a->next;
 	}
     write(1, "rra\n", 4);
 }

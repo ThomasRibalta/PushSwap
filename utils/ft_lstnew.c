@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:44:18 by thoribal          #+#    #+#             */
-/*   Updated: 2023/11/26 20:40:46 by toto             ###   ########.fr       */
+/*   Updated: 2023/11/28 20:13:56 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,30 @@ t_list	*ft_lstnew(int nb)
 	return (new);
 }
 
-void	aff_list(t_list **lst)
+void	aff_list(t_list *lsta, t_list *lstb)
 {
-	t_list *tmp;
+	t_list *tmp1;
+	t_list *tmp2;
 
-	tmp = *lst;
-	while (tmp && tmp->next)
+	tmp1 = lsta;
+	tmp2 = lstb;
+	while ((tmp1 && tmp1->next) || (tmp2 && tmp2->next))
 	{
-		printf("%d\n", tmp->num);
-		tmp = tmp->next;
+		if (tmp1)
+		{
+			printf("  %d   ", tmp1->num);			
+			tmp1 = tmp1->next;
+		}
+		if (tmp2)
+		{	
+			printf("e  %d  ", tmp2->num);  
+			tmp2 = tmp2->next;
+		}
+		printf("\n");
 	}
-	printf("%d\n", tmp->num);
+	if (tmp1)
+		printf("  %d   ", tmp1->num);
+	if (tmp2)
+		printf("  %d  \n", tmp2->num);
+	printf("\n--A-- --B--\n");
 }

@@ -21,6 +21,5 @@ void    get_num(t_list **a, char *num)
 void    parsing(t_list **a, char *num)
 {
     get_num(a, num);
-    aff_list(a);
     //printf("FIN\n");
 }
