@@ -9,11 +9,11 @@ void    pb(t_list **b, t_list *a)
         return ;
     while (tmp && tmp->next)
     {
-        if (tmp->num >= tmp->next->num)
+        if (tmp->num > tmp->next->num)
             break ;
 	    ft_lstadd_front(b, ft_lstnew(tmp->num));
       	tmp = tmp->next;
+        write(1, "pb\n", 3);
     }
     *a = *tmp;
-    write(1, "pb\n", 3);
 }
