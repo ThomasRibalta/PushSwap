@@ -21,7 +21,7 @@ int	is_str_num(char *str)
 {
 	while (*str)
 	{
-		if(!ft_isdigit(*str))
+		if (!ft_isdigit(*str))
 			return (0);
 		str++;
 	}

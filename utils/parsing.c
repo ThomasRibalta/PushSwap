@@ -1,25 +1,37 @@
 #include "pushswap.h"
 
-void    get_num(t_list **a, char *num)
+void	get_num(t_list **a, char **num)
 {
-    char    **num_tab;
-    t_list  **tmp;
+	t_list	**tmp;
 
-    tmp = a;
-    num_tab = ft_split(num, ' ');
-    while (*num_tab)
-    {
-        if (is_str_num(*num_tab))
-            ft_lstadd_back(tmp, ft_lstnew(ft_atoi(*num_tab)));
-        else
-            printf("Error - Penser a free ici (a ou tmp tout les next quoi)\n");
-        num_tab++;
-    }
-    a = tmp;
+	tmp = a;
+	while (*num)
+	{
+		if (is_str_num(*num))
+			ft_lstadd_back(tmp, ft_lstnew(ft_atoi(*num)));
+		else
+			printf("Error - Penser a free ici (a ou tmp tout les next quoi)\n");
+		num++;
+	}
+	a = tmp;
 }
 
-void    parsing(t_list **a, char *num)
+void	free_split(char **num)
 {
-    get_num(a, num);
-    //printf("FIN\n");
+	int	i;
+
+	i = 0;
+	while(num[i])
+	{
+		free(num[i]);
+		i++;
+	}
+	free(num);
+}
+
+void	parsing(t_list **a, char **num, int n)
+{
+	get_num(a, num);
+	if (n)
+		free_split(num);
 }

@@ -1,20 +1,27 @@
-# include "pushswap.h"
+#include "pushswap.h"
 
-void    small_sort(t_list *a, t_list *b)
+// void	sort_b(t_list *b)
+// {
+// 	if (b->num < b->next->num)
+// 		sb(b);
+// 	if (b->num < ft_lstlast(b)->num)
+// 		rrb(b);
+// 	if (!is_sort_one(b))
+// 		sort_b(b);
+// }
+
+void	small_sort(t_list **a, t_list **b)
 {
-    is_sort(a, b);
-    if (a->num > a->next->num)
-        sa(a);
-    aff_list(a, b);
-    is_sort(a, b);
-    if (a->num > ft_lstlast(a)->num)
-        rra(a);
-    aff_list(a, b);
-    is_sort(a, b);
-    aff_list(a, b);
-    pb(&b, a);
-    aff_list(a, b);
-    pa(&b, &a);
-    aff_list(a, b);
-    small_sort(a, b);
+	if (is_sort(*a, *b))
+		return;
+	if ((*a)->num > (*a)->next->num)
+		sa(a);
+	if ((*a)->num > ft_lstlast(*a)->num && ft_lstsize(*a) > 2)
+		rra(a);
+	aff_list(a, b);
+	pb(b, a);
+	aff_list(a, b);
+	pa(b, a);
+	aff_list(a, b);
+	small_sort(a, b);
 }
