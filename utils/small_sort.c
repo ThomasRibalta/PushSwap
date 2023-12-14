@@ -13,15 +13,14 @@
 void	small_sort(t_list **a, t_list **b)
 {
 	if (is_sort(*a, *b))
-		return;
+		return ;
+	if ((*a)->num > ft_lstlast(*a)->num && ft_lstsize(*a) > 2 && (*a)->num > (*a)->next->num)
+		ra(a);
 	if ((*a)->num > (*a)->next->num)
 		sa(a);
 	if ((*a)->num > ft_lstlast(*a)->num && ft_lstsize(*a) > 2)
 		rra(a);
-	aff_list(a, b);
 	pb(b, a);
-	aff_list(a, b);
 	pa(b, a);
-	aff_list(a, b);
 	small_sort(a, b);
 }
