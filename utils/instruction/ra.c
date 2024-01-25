@@ -8,21 +8,17 @@ void	ra(t_list **a)
 
 	if (!*a || !(*a)->next)
 		return ;
-	while ((*a)->num > (*a)->next->num && (*a)->num > ft_lstlast(*a)->num)
+	ltmp = ft_lstlast(*a);
+	tmp = ltmp->num;
+	ltmp->num = ft_lstfirst(ltmp)->num;
+	while (ltmp->prev)
 	{
-		ltmp = ft_lstlast(*a);
-		printf("%d %d \n", ltmp->prev->num, ltmp->num);
-		tmp = ltmp->num;
-		ltmp->num = ft_lstfirst(ltmp)->num;
-		while (ltmp->prev)
-		{
-			tmp2 = ltmp->prev->num;
-			printf("ltmp : %d %d %d \n", ltmp->num, tmp, tmp2);
-			ltmp->prev->num = tmp;
-			tmp = tmp2;
-			ltmp = ltmp->prev;
-		}
-		*a = ltmp;
-		write(1, "ra\n", 4);
+		tmp2 = ltmp->prev->num;
+		ltmp->prev->num = tmp;
+		tmp = tmp2;
+		ltmp = ltmp->prev;
 	}
+	*a = ltmp;
+	ft_reset_index(a);
+	write(1, "ra\n", 4);
 }

@@ -12,6 +12,20 @@
 
 #include "pushswap.h"
 
+void	ft_reset_index(t_list **lst){
+	t_list *tmp;
+
+	tmp = *lst;
+	tmp->index = 0;
+	tmp = tmp->next;
+	while (tmp)
+	{
+		tmp->index = tmp->prev->index + 1;
+		tmp = tmp->next;
+	}
+	*lst = tmp;
+}
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (*lst)
@@ -19,6 +33,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		(*lst)->prev = new;
 		new->next = *lst;
 		*lst = new;
+		ft_reset_index(lst);
 	}
 	else
 		*lst = new;

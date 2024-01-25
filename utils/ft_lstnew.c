@@ -21,6 +21,7 @@ t_list	*ft_lstnew(int nb)
 		return (NULL);
 	new->num = nb;
 	new->next = NULL;
+	new->index = 0;
 	new->prev = NULL;
 	return (new);
 }
@@ -34,13 +35,13 @@ void	aff_list(t_list **lsta, t_list **lstb)
 	tmp2 = *lstb;
 	while ((tmp1 && tmp1->next) || (tmp2 && tmp2->next))
 	{
-		printf("  %d     %d  \n", (tmp1) ? tmp1->num : 0,
+		printf("  %ld     %ld  \n", (tmp1) ? tmp1->num : 0,
 			(tmp2) ? tmp2->num : 0);
 		if (tmp1)
 			tmp1 = tmp1->next;
 		if (tmp2)
 			tmp2 = tmp2->next;
 	}
-	printf("  %d     %d  \n", (tmp1) ? tmp1->num : 0, (tmp2) ? tmp2->num : 0);
+	printf("  %ld     %ld  \n", (tmp1) ? tmp1->num : 0, (tmp2) ? tmp2->num : 0);
 	printf("\n--A-- --B--\n");
 }

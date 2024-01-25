@@ -7,19 +7,20 @@
 
 typedef struct s_list
 {
-	int				num;
+	long			num;
+	long			index;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
 
 char				**ft_split(char *s, char c);
+void				ft_reset_index(t_list **lst);
 int					ft_atoi(const char *str);
 t_list				*ft_lstnew(int nb);
 int					ft_lstsize(t_list *lst);
-int					is_sort_one(t_list *lst);
 int					is_sort(t_list *a, t_list *b);
 void				parsing(t_list **a, char **num, int n);
-void				small_sort(t_list **a, t_list **b);
+void				small_sor_3(t_list **a);
 void				rra(t_list **a);
 void				ra(t_list **a);
 void				free_lst(t_list **b);
