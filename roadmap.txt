@@ -1,0 +1,26 @@
+Chemin a suivre pour modifer parfaitement mon pushswap:
+- Modifier ma structure:
+index ? oui
+- Pofiner l'algorythme brutal :
+Envoyer les deux premiers nombre dans stack_b
+Si stack A est toujours > 3
+on push tout sur b jusqu'a qu'il reste plus que 3 nombre dans stack A
+Pour push sur b calculer qu'elle nombre prendrait le moins de coup a push a la bonne place.
+SURTOUT PENSER A AJOUTER SS RR
+
+Rotate possible:
+rarb ensemble -> 
+fonction rr qui va return le nombre de coup :
+  si meme nombre de rotate return que le nombre de rr
+  si le num est plus loin dans a que dans b compter le diference de ra
+  pareille que juste au dessus mais pour rb
+
+
+rra rrb ensemble ->
+fonction rrr qui va return le nombre de coup :
+  si meme nombre de rotate return que le nombre de rrr
+  si le num est plus loin dans a que dans b compter le diference de rra
+  pareille que juste au dessus mais pour rrb
+  
+rra rb 
+rrb ra 
