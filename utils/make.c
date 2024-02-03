@@ -29,3 +29,27 @@ int make_rrr(t_list **a, t_list **b, int nb)
   pb(b, a);
   return (-1);
 }
+
+int make_rrarb(t_list **a, t_list **b, int nb)
+{
+  int positionB;
+
+  positionB = get_position(b, num);;
+  while (positionB-- != 0)
+    rb(b);
+  while ((*a)->num != nb)
+    rra(a);
+  return (-1);
+}
+
+int make_rrbra(t_list **a, t_list **b, int nb)
+{
+  int positionB;
+
+  positionB = ft_lstsize(b) - get_position(b, num);
+  while (positionB-- != 0)
+    rb(b);
+  while ((*a)->num != nb)
+    ra(a);
+  return (-1);
+}
