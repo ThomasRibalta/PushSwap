@@ -40,6 +40,7 @@ t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstfirst(t_list *lst);
 int					is_str_num(char *str);
 long get_position(t_list **b, long num);
+int make_rr(t_list **a, t_list **b, int nb);
 long get_index(t_list **lst, long num);
 int moove_rr(t_list **a, t_list **b, long num);
 int moove_rrr(t_list **a, t_list **b, long num);

@@ -9,8 +9,16 @@ void    ft_pushb_at_position(t_list **a, t_list **b)
     {
         tmp = *a;
         nombreCoup = get_best_moove(a, b, tmp->num);
-        while (tmp)
+        while (nombreCoup >= 0)
         {
+            if (nombreCoup == moove_rr(a, b, tmp->num))
+                nombreCoup = make_rr(a,b, tmp->num);
+            if (nombreCoup == moove_rrarb(a, b, tmp->num))
+                nombreCoup = make_rrarb(a,b, tmp->num);
+            if (nombreCoup == moove_rrbra(a, b, tmp->num))
+                nombreCoup = make_rrbra(a,b, tmp->num);
+            if (nombreCoup == moove_rrr(a, b, tmp->num))
+                nombreCoup = make_rrr(a,b, tmp->num);
             tmp = tmp->next;
         }
     }

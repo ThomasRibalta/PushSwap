@@ -74,3 +74,4 @@ int moove_rrbra(t_list **a, t_list **b, long num)
     position += ft_lstsize(b) - get_position(b, num);
     return (position);
 }
+  
