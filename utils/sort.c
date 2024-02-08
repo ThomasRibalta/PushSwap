@@ -36,6 +36,30 @@ void    ft_pushall_b(t_list **a, t_list **b)
         small_sort_3(a); 
 }
 
+void    ft_pushall_a(t_list **b, t_list **a)
+{
+    int nombreCoup;
+    t_list  *tmp;
+
+    while (ft_lstsize(b) != 0)
+    {
+        tmp = *b;
+        nombreCoup = get_best_moove(b, a, tmp->num);
+        while (nombreCoup >= 0)
+        {
+            if (nombreCoup == moove_rr(b, a, tmp->num))
+                nombreCoup = make_rr(b, a, tmp->num);
+            if (nombreCoup == moove_rrarb(b, a, tmp->num))
+                nombreCoup = make_rrarb(b,a, tmp->num);
+            if (nombreCoup == moove_rrbra(b, a, tmp->num))
+                nombreCoup = make_rrbra(b,a, tmp->num);
+            if (nombreCoup == moove_rrr(b, a, tmp->num))
+                nombreCoup = make_rrr(b,a, tmp->num);
+            tmp = tmp->next;
+        }
+    }
+}
+
 void    sort(t_list **a)
 {
     t_list *b;
@@ -48,5 +72,6 @@ void    sort(t_list **a)
     else
     {
         ft_pushall_b(a, &b);
+        ft_pushall_a(&b, a);
     }
 }
