@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		new->prev = ft_lstlast(*lst);
 		ft_lstlast(*lst)->next = new;
-		ft_lstlast(*lst)->next->index = ft_lstlast(*lst)->index + 1;
+		ft_lstlast(*lst)->index = ft_lstlast(*lst)->prev->index + 1;
 
 	}
 	else

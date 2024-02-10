@@ -49,11 +49,11 @@ int moove_rrr(t_list **a, t_list **b, long num)
 {
     int position;
 
-    position = ft_lstsize(b) - get_position(b, num);
-    if (position > (ft_lstsize(a) - get_index(a, num)))
-        position = get_index(a, num) + (position - (ft_lstsize(a) - get_index(a, num)));
-    if (position < (ft_lstsize(a) - get_index(a, num)))
-        position = position + ((ft_lstsize(a) - get_index(a, num)) - position);
+    position = ft_lstsize(*b) - get_position(b, num);
+    if (position > (ft_lstsize(*a) - get_index(a, num)))
+        position = get_index(a, num) + (position - (ft_lstsize(*a) - get_index(a, num)));
+    if (position < (ft_lstsize(*a) - get_index(a, num)))
+        position = position + ((ft_lstsize(*a) - get_index(a, num)) - position);
     return (position);
 }
 
@@ -62,7 +62,7 @@ int moove_rrarb(t_list **a, t_list **b, long num)
     int position;
 
     position = get_position(b, num);
-    position += ft_lstsize(a) - get_index(a,num);
+    position += ft_lstsize(*a) - get_index(a,num);
     return (position);
 }
 
@@ -71,7 +71,7 @@ int moove_rrbra(t_list **a, t_list **b, long num)
     int position;
 
     position = get_index(a, num);
-    position += ft_lstsize(b) - get_position(b, num);
+    position += ft_lstsize(*b) - get_position(b, num);
     return (position);
 }
   

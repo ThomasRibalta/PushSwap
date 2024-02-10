@@ -1,24 +1,17 @@
 #include "../pushswap.h"
 
-void	ra(t_list **a)
+void	ra(t_list **a, int n)
 {
-	int	tmp;
-	int	tmp2;
-	t_list *ltmp;
+	t_list *tmp;
 
 	if (!*a || !(*a)->next)
 		return ;
-	ltmp = ft_lstlast(*a);
-	tmp = ltmp->num;
-	ltmp->num = ft_lstfirst(ltmp)->num;
-	while (ltmp->prev)
-	{
-		tmp2 = ltmp->prev->num;
-		ltmp->prev->num = tmp;
-		tmp = tmp2;
-		ltmp = ltmp->prev;
-	}
-	*a = ltmp;
-	ft_reset_index(a);
-	write(1, "ra\n", 4);
+	
+	tmp = *a;
+	*a = ft_lstlast(*a);
+	(*a)->next = tmp;
+	*a = tmp->next;
+	tmp->next = NULL;
+	if (n == -1)
+		write(1, "ra\n", 4);
 }

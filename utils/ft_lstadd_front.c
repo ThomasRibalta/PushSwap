@@ -14,16 +14,16 @@
 
 void	ft_reset_index(t_list **lst){
 	t_list *tmp;
+	int	i;
 
 	tmp = *lst;
-	tmp->index = 0;
-	tmp = tmp->next;
+	i = 0;
 	while (tmp)
-	{
-		tmp->index = tmp->prev->index + 1;
-		tmp = tmp->next;
+  {
+		tmp->index = i;
+	 	tmp = tmp->next;
+		i++;
 	}
-	*lst = tmp;
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)

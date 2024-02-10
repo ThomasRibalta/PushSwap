@@ -9,6 +9,5 @@ void	sa(t_list **a)
 	tmp = (*a)->num;
 	(*a)->num = (*a)->next->num;
 	(*a)->next->num = tmp;
-	ft_reset_index(a);
 	write(1, "sa\n", 3);
 }

@@ -9,6 +9,5 @@ void	sb(t_list **b)
 	tmp = (*b)->num;
 	(*b)->num = (*b)->next->num;
 	(*b)->next->num = tmp;
-	ft_reset_index(*b);
 	write(1, "sb\n", 3);
 }
