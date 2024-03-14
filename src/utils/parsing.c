@@ -7,10 +7,13 @@ void	get_num(t_list **a, char **num)
 	tmp = a;
 	while (*num)
 	{
-		if (is_str_num(*num))
-			ft_lstadd_back(tmp, ft_lstnew(ft_atoi(*num)));
+		if (is_str_num(*num) && is_int(ft_atoi(*num)))
+			ft_lstadd_back(tmp, ft_lstnew((int) ft_atoi(*num)));
 		else
-			printf("Error - Penser a free ici (a ou tmp tout les next quoi)\n");
+		{
+			write(2, "Error\n", 6);
+			free_lst(tmp);
+		}
 		num++;
 	}
 	a = tmp;

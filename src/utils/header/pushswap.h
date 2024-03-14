@@ -58,6 +58,7 @@ int					makeB_rrbra(t_list **a, t_list **b, int nb);
 int					makeA_rr(t_list **a, t_list **b, int nb);
 void				small_sort_3_reverse(t_list **b);
 int					makeA_rrr(t_list **a, t_list **b, int nb);
+int					is_int(long int nb);
 int					makeA_rrarb(t_list **a, t_list **b, int nb);
 int					makeA_rrbra(t_list **a, t_list **b, int nb);
 int					get_index(t_list **lst, long num);

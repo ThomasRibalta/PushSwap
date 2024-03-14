@@ -12,10 +12,10 @@
 
 #include "../header/pushswap.h"
 
-int	ft_atoi(const char *str)
+long int ft_atoi(const char *str)
 {
 	int	mult;
-	int	result;
+	long int	result;
 
 	result = 0;
 	mult = 1;

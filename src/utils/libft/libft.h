@@ -51,6 +51,6 @@ int		ft_isascii(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_isalpha(int c);
-int		ft_atoi(const char *str);
+long int ft_atoi(const char *str);
 
 #endif

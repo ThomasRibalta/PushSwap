@@ -63,3 +63,10 @@ void check_dooble(t_list **a)
 		lst = lst->next;
 	}
 }
+
+int is_int(long int nb)
+{
+    if (nb < -2147483648 || nb > 2147483647)
+        return (0);
+    return (1);
+}
