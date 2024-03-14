@@ -20,6 +20,7 @@ void				sort(t_list **a);
 t_list				*ft_lstnew(int nb);
 int					ft_lstsize(t_list *lst);
 int					is_sort(t_list *a);
+void				check_dooble(t_list **a);
 int					is_reverse_sort(t_list *b);
 void				parsing(t_list **a, char **num, int n);
 int					get_best_mooveB(t_list **a, t_list **b);

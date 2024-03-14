@@ -12,6 +12,7 @@ void free_lst(t_list **b)
         current = next;
     }
     *b = NULL;
+    exit(1);
 }
 
 void	ft_reset_index(t_list **lst){
@@ -39,4 +40,26 @@ int get_index(t_list **lst, long num){
         tmp = tmp->next;
     }
     return (0);
+}
+
+void check_dooble(t_list **a)
+{
+    t_list *tmp;
+    t_list *lst;
+
+    lst = *a;
+	while (lst && lst->next)
+	{
+        tmp = lst->next;
+        while (tmp)
+        {
+            if (lst->num == tmp->num)
+            {
+                printf("Error\n");
+                free_lst(a);
+            }
+            tmp = tmp->next;
+        }
+		lst = lst->next;
+	}
 }

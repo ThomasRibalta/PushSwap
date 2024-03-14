@@ -34,4 +34,5 @@ void	parsing(t_list **a, char **num, int n)
 	get_num(a, num);
 	if (n)
 		free_split(num);
+	check_dooble(a);
 }
