@@ -21,7 +21,7 @@ int	ft_isdigit(int c)
 
 int	is_str_num(char *str)
 {
-	if (*str == '-')
+	if (*str == '-' && str[1] != '\0')
 		str++;
 	while (*str)
 	{
