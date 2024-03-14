@@ -55,7 +55,7 @@ void check_dooble(t_list **a)
         {
             if (lst->num == tmp->num)
             {
-                printf("Error\n");
+                write(2, "Error\n", 6);
                 free_lst(a);
             }
             tmp = tmp->next;
