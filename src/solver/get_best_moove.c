@@ -6,17 +6,17 @@ int   get_best_mooveB(t_list **a, t_list **b)
     t_list *tmp;
 
     tmp = *a;
-    numTmp = mooveB_rr(a, b, tmp->num);
+    numTmp = mooveB_rrr(a, b, tmp->num);
     while (tmp)
     {
         if (numTmp > mooveB_rr(a, b, tmp->num))
             numTmp = mooveB_rr(a, b, tmp->num);
         if (numTmp > mooveB_rrr(a, b, tmp->num))
             numTmp = mooveB_rrr(a, b, tmp->num);
-        if (numTmp > mooveB_rrarb(a, b, tmp->num))
-            numTmp = mooveB_rrarb(a, b, tmp->num);
         if (numTmp > mooveB_rrbra(a, b, tmp->num))
             numTmp = mooveB_rrbra(a, b, tmp->num);
+        if (numTmp > mooveB_rrarb(a, b, tmp->num))
+            numTmp = mooveB_rrarb(a, b, tmp->num);
         tmp = tmp->next;
     }
     return (numTmp);

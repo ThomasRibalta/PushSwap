@@ -31,13 +31,16 @@ void	ft_reset_index(t_list **lst){
 
 int get_index(t_list **lst, long num){
     t_list *tmp;
+    int i;
     
     tmp = *lst;
+    i = 0;
     while (tmp)
     {
         if (tmp->num == num)
-            return (tmp->index);
+            return (i);
         tmp = tmp->next;
+        i++;
     }
     return (0);
 }

@@ -13,18 +13,18 @@ void    ft_pushb_at_position(t_list **a, t_list **b)
         {
             if (nombreCoup == mooveB_rr(a, b, tmp->num))
                 nombreCoup = makeB_rr(a,b, tmp->num);
-            else if (nombreCoup == mooveB_rrarb(a, b, tmp->num))
-                nombreCoup = makeB_rrarb(a,b, tmp->num);
-            else if (nombreCoup == mooveB_rrbra(a, b, tmp->num))
-                nombreCoup = makeB_rrbra(a,b, tmp->num);
             else if (nombreCoup == mooveB_rrr(a, b, tmp->num))
                 nombreCoup = makeB_rrr(a,b, tmp->num);
+            else if (nombreCoup == mooveB_rrbra(a, b, tmp->num))
+                nombreCoup = makeB_rrbra(a,b, tmp->num);
+            else if (nombreCoup == mooveB_rrarb(a, b, tmp->num))
+                nombreCoup = makeB_rrarb(a,b, tmp->num);
             else
                 tmp = tmp->next;
         }
     }
-    if (!is_reverse_sort(*b))
-        final_sort_b(b);
+    // if (!is_reverse_sort(*b))
+    //     final_sort_b(b);
 }
 
 void    ft_pushall_b(t_list **a, t_list **b)

@@ -52,7 +52,7 @@ int mooveB_rrarb(t_list **a, t_list **b, long num)
 
     position = 0;
     if (get_index(a, num))
-		position = ft_lstsize(*a) - get_index(b, num);
+		position = ft_lstsize(*a) - get_index(a, num);
     position += get_positionB(b, num);
     return (position);
 }
