@@ -2,7 +2,7 @@
 
 void	rra(t_list **a, int n)
 {
-	t_list *tmp;
+	t_list	*tmp;
 	int		last;
 
 	if (!*a || !(*a)->next)

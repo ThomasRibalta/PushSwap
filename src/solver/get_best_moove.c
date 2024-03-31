@@ -1,45 +1,45 @@
 #include "../utils/header/pushswap.h"
 
-int   get_best_mooveB(t_list **a, t_list **b)
+int	get_best_mooveb(t_list **a, t_list **b)
 {
-    int numTmp;
-    t_list *tmp;
+	int		numtmp;
+	t_list	*tmp;
 
-    tmp = *a;
-    numTmp = mooveB_rrr(a, b, tmp->num);
-    while (tmp)
-    {
-        if (numTmp > mooveB_rr(a, b, tmp->num))
-            numTmp = mooveB_rr(a, b, tmp->num);
-        if (numTmp > mooveB_rrr(a, b, tmp->num))
-            numTmp = mooveB_rrr(a, b, tmp->num);
-        if (numTmp > mooveB_rrbra(a, b, tmp->num))
-            numTmp = mooveB_rrbra(a, b, tmp->num);
-        if (numTmp > mooveB_rrarb(a, b, tmp->num))
-            numTmp = mooveB_rrarb(a, b, tmp->num);
-        tmp = tmp->next;
-    }
-    return (numTmp);
+	tmp = *a;
+	numtmp = mooveb_rrr(a, b, tmp->num);
+	while (tmp)
+	{
+		if (numtmp > mooveb_rr(a, b, tmp->num))
+			numtmp = mooveb_rr(a, b, tmp->num);
+		if (numtmp > mooveb_rrr(a, b, tmp->num))
+			numtmp = mooveb_rrr(a, b, tmp->num);
+		if (numtmp > mooveb_rrbra(a, b, tmp->num))
+			numtmp = mooveb_rrbra(a, b, tmp->num);
+		if (numtmp > mooveb_rrarb(a, b, tmp->num))
+			numtmp = mooveb_rrarb(a, b, tmp->num);
+		tmp = tmp->next;
+	}
+	return (numtmp);
 }
 
-int   get_best_mooveA(t_list **a, t_list **b)
+int	get_best_moovea(t_list **a, t_list **b)
 {
-    int numTmp;
-    t_list *tmp;
+	int		numtmp;
+	t_list	*tmp;
 
-    tmp = *b;
-    numTmp = mooveA_rr(a, b, tmp->num);
-    while (tmp)
-    {
-        if (numTmp > mooveA_rr(a, b, tmp->num))
-            numTmp = mooveA_rr(a, b, tmp->num);
-        if (numTmp > mooveA_rrr(a, b, tmp->num))
-            numTmp = mooveA_rrr(a, b, tmp->num);
-        if (numTmp > mooveA_rrarb(a, b, tmp->num))
-            numTmp = mooveA_rrarb(a, b, tmp->num);
-        if (numTmp > mooveA_rrbra(a, b, tmp->num))
-            numTmp = mooveA_rrbra(a, b, tmp->num);
-        tmp = tmp->next;
-    }
-    return (numTmp);
+	tmp = *b;
+	numtmp = moovea_rr(a, b, tmp->num);
+	while (tmp)
+	{
+		if (numtmp > moovea_rr(a, b, tmp->num))
+			numtmp = moovea_rr(a, b, tmp->num);
+		if (numtmp > moovea_rrr(a, b, tmp->num))
+			numtmp = moovea_rrr(a, b, tmp->num);
+		if (numtmp > moovea_rrarb(a, b, tmp->num))
+			numtmp = moovea_rrarb(a, b, tmp->num);
+		if (numtmp > moovea_rrbra(a, b, tmp->num))
+			numtmp = moovea_rrbra(a, b, tmp->num);
+		tmp = tmp->next;
+	}
+	return (numtmp);
 }

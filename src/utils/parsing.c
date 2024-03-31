@@ -8,7 +8,7 @@ void	get_num(t_list **a, char **num)
 	while (*num)
 	{
 		if (is_str_num(*num) && is_int(ft_atoi(*num)))
-			ft_lstadd_back(tmp, ft_lstnew((int) ft_atoi(*num)));
+			ft_lstadd_back(tmp, ft_lstnew((int)ft_atoi(*num)));
 		else
 		{
 			write(2, "Error\n", 6);
@@ -24,7 +24,7 @@ void	free_split(char **num)
 	int	i;
 
 	i = 0;
-	while(num[i])
+	while (num[i])
 	{
 		free(num[i]);
 		i++;

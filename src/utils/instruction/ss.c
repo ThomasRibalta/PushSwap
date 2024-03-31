@@ -9,7 +9,7 @@ void	ss(t_list **a, t_list **b)
 	tmp = (*a)->num;
 	(*a)->num = (*a)->next->num;
 	(*a)->next->num = tmp;
-  tmp = (*b)->num;
+	tmp = (*b)->num;
 	(*b)->num = (*b)->next->num;
 	(*b)->next->num = tmp;
 	write(1, "ss\n", 3);

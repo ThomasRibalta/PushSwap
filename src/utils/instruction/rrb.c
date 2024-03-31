@@ -2,7 +2,7 @@
 
 void	rrb(t_list **b, int n)
 {
-	t_list *tmp;
+	t_list	*tmp;
 	int		last;
 
 	if (!*b || !(*b)->next)

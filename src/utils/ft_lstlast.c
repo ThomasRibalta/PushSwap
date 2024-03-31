@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:32:38 by thoribal          #+#    #+#             */
-/*   Updated: 2023/12/11 16:23:44 by toto             ###   ########.fr       */
+/*   Updated: 2024/03/31 17:12:00 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ t_list	*ft_lstlast(t_list *lst)
 }
 
 t_list	*ft_lstfirst(t_list *lst)
- {
- 	while (lst && lst->prev)
- 	{
- 		lst = lst->prev;
- 	}
- 	return (lst);
+{
+	while (lst && lst->prev)
+	{
+		lst = lst->prev;
+	}
+	return (lst);
 }

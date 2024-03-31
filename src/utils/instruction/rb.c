@@ -2,11 +2,10 @@
 
 void	rb(t_list **b, int n)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!*b || !(*b)->next)
 		return ;
-	
 	tmp = *b;
 	*b = ft_lstlast(*b);
 	(*b)->next = tmp;

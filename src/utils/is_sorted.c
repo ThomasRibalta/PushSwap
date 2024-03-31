@@ -3,7 +3,7 @@
 int	is_sort(t_list *a)
 {
 	t_list	*tmp;
-	
+
 	tmp = a;
 	while (tmp && tmp->next)
 	{
@@ -18,7 +18,7 @@ int	is_sort(t_list *a)
 int	is_reverse_sort(t_list *b)
 {
 	t_list	*tmp;
-	
+
 	tmp = b;
 	while (tmp && tmp->next)
 	{

@@ -1,18 +1,17 @@
 #include "../utils/header/pushswap.h"
 
-void	erreur(t_list **a, t_list **b)
+void	erreur(void)
 {
 	write(1, "KO\n", 3);
 }
 
-void	succes(t_list **a, t_list **b)
+void	succes(void)
 {
 	write(1, "OK\n", 3);
 }
 
 void	exec_moove(char *buffer, t_list **a, t_list **b)
 {
-	printf("compare: %d buffer : %s",!ft_strcmp("pb\n", buffer), buffer);
 	if (!ft_strcmp("sa\n", buffer))
 		sa(a);
 	else if (!ft_strcmp("sb\n", buffer))
@@ -36,12 +35,12 @@ void	exec_moove(char *buffer, t_list **a, t_list **b)
 	else if (!ft_strcmp("ss\n", buffer))
 		ss(a, b);
 	else
-		erreur(a, b);
+		erreur();
 }
 
 void	checker(t_list **a, t_list **b)
 {
-	char *buffer;
+	char	*buffer;
 
 	buffer = get_next_line(0);
 	while (buffer && buffer[0] != '\n')
@@ -52,11 +51,11 @@ void	checker(t_list **a, t_list **b)
 	}
 	free(buffer);
 	if (!is_sort(*a))
-		erreur(a, b);
+		erreur();
 	else if (ft_lstsize(*b) > 0)
-		erreur(a, b);
+		erreur();
 	else
-		succes(a, b);
+		succes();
 }
 
 int	main(int ac, char **av)

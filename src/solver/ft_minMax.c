@@ -1,8 +1,8 @@
 #include "../utils/header/pushswap.h"
 
-int ft_min(t_list *lst)
+int	ft_min(t_list *lst)
 {
-    int		tmp;
+	int	tmp;
 
 	tmp = lst->num;
 	while (lst)
@@ -14,9 +14,9 @@ int ft_min(t_list *lst)
 	return (tmp);
 }
 
-int ft_max(t_list *lst)
+int	ft_max(t_list *lst)
 {
-    int		tmp;
+	int	tmp;
 
 	tmp = lst->num;
 	while (lst)
