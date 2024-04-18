@@ -35,7 +35,6 @@ SRC_1 = src/solver/check_moove_a.c \
         src/utils/parsing.c
 
 BONUS_SRC = src/checker/checker.c \
-            src/checker/checker_utils.c \
             src/utils/GetNextLine/get_next_line.c \
             src/utils/instruction/pa.c \
             src/utils/instruction/pb.c \

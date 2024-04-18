@@ -18,17 +18,17 @@ void	small_sort_3(t_list **a)
 	{
 		ra(a, -1);
 		if (!is_sort(*a))
-			sa(a);
+			sa(a, -1);
 	}
 	else if (ft_min(*a) == (*a)->num)
 	{
-		sa(a);
+		sa(a, -1);
 		ra(a, -1);
 	}
 	else
 	{
 		if ((*a)->next->num == ft_min(*a))
-			sa(a);
+			sa(a, -1);
 		else
 			rra(a, -1);
 	}
@@ -39,7 +39,7 @@ void	small_sort_3_reverse(t_list **b)
 {
 	if (ft_max(*b) == (*b)->num && ((*b)->next->num == ft_min(*b)))
 	{
-		sb(b);
+		sb(b, -1);
 		rb(b, -1);
 	}
 	else if (ft_min(*b) == (*b)->num)
@@ -48,7 +48,7 @@ void	small_sort_3_reverse(t_list **b)
 			rb(b, -1);
 		else
 		{
-			sb(b);
+			sb(b, -1);
 			rrb(b, -1);
 		}
 	}
@@ -57,7 +57,7 @@ void	small_sort_3_reverse(t_list **b)
 		if ((*b)->next->num == ft_min(*b))
 			rrb(b, -1);
 		else
-			sb(b);
+			sb(b, -1);
 	}
 	ft_reset_index(b);
 }

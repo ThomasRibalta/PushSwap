@@ -24,5 +24,5 @@ void	ra(t_list **a, int n)
 	*a = tmp->next;
 	tmp->next = NULL;
 	if (n == -1)
-		write(1, "ra\n", 4);
+		write(1, "ra\n", 3);
 }

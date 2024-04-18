@@ -12,42 +12,51 @@
 
 #include "../utils/header/pushswap.h"
 
-void	erreur(void)
+void	erreur(t_list **a, t_list **b, int n)
 {
-	write(1, "KO\n", 3);
+	if (n == -1)
+		write(1, "KO\n", 3);
+	else
+		write(1, "Error\n", 6);
+	free_lst(a);
+	free_lst(b);
+	exit(0);
 }
 
-void	succes(void)
+void	succes(t_list **a, t_list **b)
 {
 	write(1, "OK\n", 3);
+	free_lst(a);
+	free_lst(b);
+	exit(0);
 }
 
 void	exec_moove(char *buffer, t_list **a, t_list **b)
 {
 	if (!ft_strcmp("sa\n", buffer))
-		sa(a);
+		sa(a, 0);
 	else if (!ft_strcmp("sb\n", buffer))
-		sb(b);
+		sb(b, 0);
 	else if (!ft_strcmp("pa\n", buffer))
-		pa(b, a);
+		pa(b, a, 0);
 	else if (!ft_strcmp("pb\n", buffer))
-		pb(b, a);
+		pb(b, a, 0);
 	else if (!ft_strcmp("rr\n", buffer))
-		rr(a, b);
+		rr(a, b, 0);
 	else if (!ft_strcmp("rra\n", buffer))
-		rra(a, -1);
+		rra(a, 0);
 	else if (!ft_strcmp("rrb\n", buffer))
-		rrb(b, -1);
+		rrb(b, 0);
 	else if (!ft_strcmp("ra\n", buffer))
-		ra(a, -1);
+		ra(a, 0);
 	else if (!ft_strcmp("rb\n", buffer))
-		rb(b, -1);
+		rb(b, 0);
 	else if (!ft_strcmp("rrr\n", buffer))
-		rrr(a, b);
+		rrr(a, b, 0);
 	else if (!ft_strcmp("ss\n", buffer))
-		ss(a, b);
+		ss(a, b, 0);
 	else
-		erreur();
+		erreur(a, b, 0);
 }
 
 void	checker(t_list **a, t_list **b)
@@ -63,11 +72,11 @@ void	checker(t_list **a, t_list **b)
 	}
 	free(buffer);
 	if (!is_sort(*a))
-		erreur();
+		erreur(a, b, -1);
 	else if (ft_lstsize(*b) > 0)
-		erreur();
+		erreur(a, b , -1);
 	else
-		succes();
+		succes(a, b);
 }
 
 int	main(int ac, char **av)

@@ -19,7 +19,6 @@ int	main(int ac, char **av)
 	a = NULL;
 	if (ac < 2 || (ac == 2 && !av[1][0]))
 	{
-		write(1, "Error\n", 6);
 		return (0);
 	}
 	else if (ac == 2)

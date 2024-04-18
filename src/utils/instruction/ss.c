@@ -12,7 +12,7 @@
 
 #include "../header/pushswap.h"
 
-void	ss(t_list **a, t_list **b)
+void	ss(t_list **a, t_list **b, int i)
 {
 	int	tmp;
 
@@ -24,5 +24,6 @@ void	ss(t_list **a, t_list **b)
 	tmp = (*b)->num;
 	(*b)->num = (*b)->next->num;
 	(*b)->next->num = tmp;
-	write(1, "ss\n", 3);
+	if (i == -1)
+		write(1, "ss\n", 3);
 }

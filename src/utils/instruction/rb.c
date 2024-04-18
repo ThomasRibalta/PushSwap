@@ -24,5 +24,5 @@ void	rb(t_list **b, int n)
 	*b = tmp->next;
 	tmp->next = NULL;
 	if (n == -1)
-		write(1, "rb\n", 4);
+		write(1, "rb\n", 3);
 }

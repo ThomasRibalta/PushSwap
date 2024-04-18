@@ -12,7 +12,7 @@
 
 #include "../header/pushswap.h"
 
-void	pa(t_list **b, t_list **a)
+void	pa(t_list **b, t_list **a, int i)
 {
 	t_list	*tmp;
 
@@ -24,5 +24,6 @@ void	pa(t_list **b, t_list **a)
 	(*a)->next = tmp;
 	ft_reset_index(a);
 	ft_reset_index(b);
-	write(1, "pa\n", 3);
+	if (i == -1)
+		write(1, "pa\n", 3);
 }

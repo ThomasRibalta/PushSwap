@@ -40,9 +40,9 @@ void	ft_pushb_at_position(t_list **a, t_list **b)
 void	ft_pushall_b(t_list **a, t_list **b)
 {
 	if (!is_sort(*a))
-		pb(b, a);
+		pb(b, a, -1);
 	if (ft_lstsize(*a) > 3 && !is_sort(*a))
-		pb(b, a);
+		pb(b, a, -1);
 	if (ft_lstsize(*a) > 3 && !is_sort(*a))
 		ft_pushb_at_position(a, b);
 	if (!is_sort(*a))
@@ -80,7 +80,7 @@ void	sort(t_list **a)
 
 	b = NULL;
 	if (ft_lstsize(*a) == 2)
-		sa(a);
+		sa(a, -1);
 	else if (ft_lstsize(*a) == 3)
 		small_sort_3(a);
 	else
