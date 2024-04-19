@@ -76,13 +76,18 @@ char	*save_next(char *s)
 	return (str);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int n)
 {
 	char		*line;
 	static char	*s;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	if (!n)
+	{
+		free(s);
+		return (malloc(sizeof(char *)));
+	}
 	s = get_next_end(fd, s);
 	if (!s)
 		return (NULL);

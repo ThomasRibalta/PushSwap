@@ -6,20 +6,28 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:25:22 by toto              #+#    #+#             */
-/*   Updated: 2024/04/01 13:25:23 by toto             ###   ########.fr       */
+/*   Updated: 2024/04/19 09:21:15 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils/header/pushswap.h"
 
-void	erreur(t_list **a, t_list **b, int n)
+void	erreur(t_list **a, t_list **b, int n, char *buffer)
 {
 	if (n == -1)
 		write(1, "KO\n", 3);
 	else
+	{
 		write(1, "Error\n", 6);
+		free(buffer);
+	}
+	buffer = get_next_line (0, 0);
+	free(buffer);
+	while (ft_lstsize(*b) > 0)
+	{
+		pa(b, a, 0);
+	}
 	free_lst(a);
-	free_lst(b);
 	exit(0);
 }
 
@@ -56,25 +64,25 @@ void	exec_moove(char *buffer, t_list **a, t_list **b)
 	else if (!ft_strcmp("ss\n", buffer))
 		ss(a, b, 0);
 	else
-		erreur(a, b, 0);
+		erreur(a, b, 0, buffer);
 }
 
 void	checker(t_list **a, t_list **b)
 {
 	char	*buffer;
 
-	buffer = get_next_line(0);
+	buffer = get_next_line(0, 1);
 	while (buffer && buffer[0] != '\n')
 	{
 		exec_moove(buffer, a, b);
 		free(buffer);
-		buffer = get_next_line(0);
+		buffer = get_next_line(0, 1);
 	}
 	free(buffer);
 	if (!is_sort(*a))
-		erreur(a, b, -1);
+		erreur(a, b, -1, buffer);
 	else if (ft_lstsize(*b) > 0)
-		erreur(a, b , -1);
+		erreur(a, b, -1, buffer);
 	else
 		succes(a, b);
 }

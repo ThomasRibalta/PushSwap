@@ -6,15 +6,16 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:23:42 by toto              #+#    #+#             */
-/*   Updated: 2024/04/01 13:23:43 by toto             ###   ########.fr       */
+/*   Updated: 2024/04/19 09:27:02 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/pushswap.h"
 
-void	rrr(t_list **a, t_list **b)
+void	rrr(t_list **a, t_list **b, int i)
 {
 	rra(a, 0);
 	rrb(b, 0);
-	write(1, "rrr\n", 4);
+	if (i == -1)
+		write(1, "rrr\n", 4);
 }
