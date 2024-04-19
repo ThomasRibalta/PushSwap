@@ -95,23 +95,4 @@ char	*get_next_line(int fd, int n)
 	s = save_next(s);
 	return (line);
 }
-/*
-int	main(void)
-{
-	int	fd;
-	char	*line;
 
-	fd = open("big_line_no_nl", O_RDONLY);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-}*/

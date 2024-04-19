@@ -40,6 +40,7 @@ BONUS_SRC = src/checker/checker.c \
             src/utils/instruction/pb.c \
             src/utils/instruction/sa.c \
             src/utils/instruction/sb.c \
+            src/utils/libft/ft_substr.c \
             src/utils/instruction/ss.c \
             src/utils/instruction/ra.c \
             src/utils/instruction/rb.c \

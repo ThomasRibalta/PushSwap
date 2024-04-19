@@ -28,12 +28,14 @@ void	free_split(char **num)
 void	get_num(t_list **a, char **num, int n)
 {
 	t_list	**tmp;
+	int	i;
 
 	tmp = a;
-	while (*num)
+	i = 0;
+	while (num[i])
 	{
-		if (is_str_num(*num) && is_int(ft_atoi(*num)))
-			ft_lstadd_back(tmp, ft_lstnew((int)ft_atoi(*num)));
+		if (is_str_num(num[i]) && is_int(ft_atoi(num[i])))
+			ft_lstadd_back(tmp, ft_lstnew((int)ft_atoi(num[i])));
 		else
 		{
 			write(2, "Error\n", 6);
@@ -41,7 +43,7 @@ void	get_num(t_list **a, char **num, int n)
 				free_split(num);
 			free_lst(tmp);
 		}
-		num++;
+		i++;
 	}
 	a = tmp;
 }
